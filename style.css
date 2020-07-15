@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+ text-align: center;
+}
+.content{
+    height: 600px;
+}
+.card{
+    display: flex;
+    background-color: red;
+    width: 200px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
