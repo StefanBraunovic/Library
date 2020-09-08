@@ -2,21 +2,30 @@
     margin: 0;
     padding: 0;
 }
-h1{
- text-align: center;
-}
-.content{
-    height: 600px;
-}
+
+
 .card{
-    display: flex;
+    display: grid;
     background-color: red;
-    width: 200px;
+   width: 200px;
+   height: 200px;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+
+
+.container{
+    height: 100vh;
+    display: grid;
+   ;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-gap: 20px;
+    border: 1px solid black;
+    
 }
+
+
+.container .knjiga{
+   
+}
+
 

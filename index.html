@@ -3,32 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css"> 
+    <link rel="stylesheet" href="style.css"> 
     <title>Biblioteka</title>
 </head>
 <body>
     <h1>Biblioteka</h1>
     
-    <div class="card" >
-        <form>
-            <label>Naziv knjige
-                <input id="title" type="text" name="naziv knjige" required>
-            </label>
-            <label>Naziv Autora
-                <input id="autor" type="text" name="naziv-autora" required>
-            </label>
-            <label>Broj Stranica
-                <input id="pages" type="number" required>
-            </label>
-            <label>Read status
-                <input id="read" type="radio" name="Read" required>
-            </label>
-            <button class="dodaj" >Add new book</button>
-        </form>
-    </div>
-    <div class="library">
-        <button id="dispBtn" >Add Book</button>
-    </div>
+        <div class="container">
+            
+            <div class="card" >
+                <form>
+                    <label>Naziv knjige
+                        <input id="title" type="text" name="naziv knjige" required>
+                    </label>
+                    <label>Naziv Autora
+                        <input id="autor" type="text" name="naziv-autora" required>
+                    </label>
+                    <label>Broj Stranica
+                        <input id="pages" type="number" required>
+                    </label>
+                    <label>Read status
+                        <input id="read" type="radio" name="Read" required>
+                    </label>
+                    <button class="dodaj" >Add new book</button>
+                </form>
+            </div>
+        </div>
+        <div class="library">
+            <button id="dispBtn" >Add Book</button>
+        </div>
+    
+   
 
     <script src="app.js"></script>
 </body>
