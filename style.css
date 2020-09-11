@@ -4,28 +4,55 @@
 }
 
 
-.card{
-    display: grid;
-    background-color: red;
-   width: 200px;
-   height: 200px;
-}
-
-
 
 .container{
-    height: 100vh;
+    
     display: grid;
-   ;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
     grid-gap: 20px;
     border: 1px solid black;
     
+   align-content: center;
+    
 }
+header{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-gap: 15px;
+}
+
+.open-button{
+    display: block;
+}
+
+
+
+#myForm{
+    display: none;
+    position: fixed;
+  bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    
+
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+
+
 
 
 .container .knjiga{
-   
+    border: 2px solid black;
+    text-align: center;
 }
+
+
+
+
+
 
 
