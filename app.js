@@ -1,3 +1,17 @@
+var firebaseConfig = {
+  apiKey: "AIzaSyChfq5W0NRXsTVxsjhNIlfQC9Rg6wUVvQA",
+  authDomain: "PROJECT_ID.firebaseapp.com",
+  databaseURL: "https://library-31f53.firebaseio.com",
+  projectId: "library-31f53",
+  storageBucket: "PROJECT_ID.appspot.com",
+  messagingSenderId: "SENDER_ID",
+  appId: "APP_ID",
+  measurementId: "G-MEASUREMENT_ID",
+};
+
+
+
+
 const cardsContainer = document.querySelector('.container');
 
 
@@ -71,6 +85,13 @@ render(book);
     var procitao= document.createElement("button");
     procitao.className="promjena";
     var status = document.createTextNode(`${book.read}`)
+    
+    if(book.read=="read"){
+      procitao.style.background="green"
+    }else{
+      procitao.style.background="red"
+    }
+    
     procitao.appendChild(status)
     knjiga.appendChild(procitao)
 
@@ -98,14 +119,14 @@ render(book);
       // }
     }
     
-    function Toggle() {
-      var x = document.querySelector(".promjena");
+    function Toggle(e) {
+      var x = e.target;
       if (x.innerHTML === "read") {
         x.innerHTML = "not read";
         x.style.background="red"
       } else {
         x.innerHTML ="read";
-        x.style.background="green"
+        x.style.background="rgb(144, 250, 144)"
       }
     }
 
@@ -137,6 +158,7 @@ let btn= document.querySelector('.dodaj');
     e.preventDefault()
   })
 
+ 
 
  
  
