@@ -16,8 +16,8 @@
         </header>
         <div class="container">
        </div>
-       <div class="form contaier">
-        <div id="myForm" >
+       <div id="myForm" >
+           <div class="form">
             <form >
                  <label>Naziv knjige
                      <input id="title" type="text" name="naziv knjige" required>
@@ -28,12 +28,15 @@
                  <label>Broj Stranica
                      <input id="pages" type="number" required>
                  </label>
-                 <label>Read status
-                     <input id="read" type="radio" name="Read" required>
+                 <label class="checkbox">
+                     <input id="read" type="checkbox" checked="true"> 
+                     read status
                  </label>
+                 <div class="buttons">
                      <button class="dodaj" >Add new book</button>
                      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-                 </form>
+                 </div>
+                </form>
              </div>
        </div> 
       

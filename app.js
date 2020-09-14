@@ -8,33 +8,54 @@ function Book(title,autor,pages,read) {
     this.autor=autor;
     this.pages=pages;
     this.read=read;
+
+
+    
   }
 
-var brojac = 0;
+
 
 
 function addBookToLibrary() {
-    brojac++;
+   
     let tit = document.getElementById('title').value;
-     let aut = document.querySelector('#autor').value;
-     let page = document.querySelector('#pages').value;
+    let aut = document.querySelector('#autor').value;
+    let page = document.querySelector('#pages').value;
+    let rd = document.querySelector('#read');
+
+
+     if(rd.checked==true){
+      rd="read";
      
+     }else{
+      rd="not read";
+     }
+
+
   
-let book = new Book(tit,aut,page);
+      var close =document.querySelector('.form');
+  close.style.display="none";
+    document.getElementById("myBtn").disabled=false;
+
+let book = new Book(tit,aut,page,rd);
 myLibrary.push(book)
 console.log(myLibrary)
 render(book);
 
 }
 
+
+
+
+
  function render(book){
   
     var knjiga = document.createElement("div");
     knjiga.className="knjiga";
-    knjiga.classList.add('element'.concat(brojac))
+  
     
     var nk = document.createElement('h1');
-    var nazivKNjige = document.createTextNode(`${book.title}`)
+    var nazivKNjige = document.createTextNode(` ${book.title}`)
     nk.appendChild(nazivKNjige)
     knjiga.appendChild(nk)
     var na= document.createElement('h1'); 
@@ -45,22 +66,48 @@ render(book);
     var BrojStranica = document.createTextNode(`${book.pages}`)
     bs.appendChild(BrojStranica)
     knjiga.appendChild(bs)
+
+   
+    var procitao= document.createElement("button");
+    procitao.className="promjena";
+    var status = document.createTextNode(`${book.read}`)
+    procitao.appendChild(status)
+    knjiga.appendChild(procitao)
+
+
      var del = document.createElement("button");
     del.className="del"
-    var brisanje = document.createTextNode('x');
+    var brisanje = document.createTextNode('Delete');
     del.appendChild(brisanje);
     knjiga.appendChild(del)
+
+  
+    procitao.addEventListener('click',Toggle);
 
     del.addEventListener('click',deleteBook)
     
     knjiga.addEventListener('click',deleteBook)
     
+    
     cardsContainer.appendChild(knjiga)
-
-  // while(myLibrary.length > 0){
-  //   myLibrary.pop()
-  // }
- }
+    
+  
+    
+    // while(myLibrary.length > 0){
+      //   myLibrary.pop()
+      // }
+    }
+    
+    function Toggle() {
+      var x = document.querySelector(".promjena");
+      if (x.innerHTML === "read") {
+        x.innerHTML = "not read";
+        x.style.background="red"
+      } else {
+        x.innerHTML ="read";
+        x.style.background="green"
+      }
+    }
 
  function deleteBook(e){
    
@@ -72,34 +119,36 @@ render(book);
 
  }
 
+function openForm() {
+   var open =document.querySelector(".form")
+   document.getElementById("myBtn").disabled=true;
+   open.style.display="block";
+  }
+  
+function closeForm() {
+    var close =document.querySelector(".form");
+    close.style.display="none";
+    document.getElementById("myBtn").disabled=false;
+  } 
+  
+let btn= document.querySelector('.dodaj');
+  btn.addEventListener('click', addBookToLibrary)
+  btn.addEventListener('click',function(e){
+    e.preventDefault()
+  })
+
 
  
- function openForm() {
-   var open =document.getElementById("myForm")
-document.getElementById("myBtn").disabled=true;
- open.style.display="block";
-}
+ 
+  
+  
 
-
-
-function closeForm() {
-  var close =document.getElementById("myForm");
-  close.style.display="none";
-  document.getElementById("myBtn").disabled=false;
-} 
-
-
-
-
-let btn= document.querySelector('.dodaj');
-btn.addEventListener('click', addBookToLibrary)
-
-
-
-
-
-        
-
+  
+  
+  
+  
+  
+  
 
 
 
